@@ -1,0 +1,37 @@
+var employee;
+class Employee{
+    constructor(name,designation,year_of_experience)
+    {
+    this.name = name;
+    this.year_of_experience =year_of_experience;
+    this.designation= designation;
+  }
+}
+//fill code here
+
+function createEmployee(name, designation, year_of_experience) {
+   employee=new Employee(name,designation,year_of_experience);
+
+}
+
+function validateObject(employee)
+{
+  if(employee instanceof Employee);
+  {     let d = new Date();
+        let n = d.getFullYear();
+    var service=n-(employee.year_of_experience+1);
+   // console.log(service);
+  }
+  return service;
+  
+}
+function displayEmployee(name,designation,year_of_experience)
+{   
+    createEmployee(name,designation,year_of_experience);
+    if(employee instanceof Employee)
+    {   
+        var print;
+        print= employee.name+" is serving the position of "+employee.designation+" since "+validateObject(employee);
+        return print;
+    }
+}
