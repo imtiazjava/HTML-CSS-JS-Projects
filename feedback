@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+  </head>
+  <body> 
+    <h2>Feedback for the ART OF LIVING session</h2><br>
+    Enter the Feedback: <textarea id="feedback" rows="4" cols="50"></textarea><br>
+    <button id="create" onclick="addFeedback()"> Add Feedback </button><br>
+    <button id="view" onclick="displayFeedback()"> View Feedback </button><br>
+    <div id="result" style="display:none; ">
+    </div>
+   <div id='hj' style="border: 3px solid black; width:40; display:none; "> <h2>FeedBack Details</h2> <h3>Successfully Added FeedBack Details!</h3> </div>
+     <script src="myjs.js" type="text/javascript"> </script>
+  </body>
+ 
+</html>
+
+/*const feedbackArray=[];
+const textarea = document.querySelector("#feedback");
+const addButton = document.querySelector("#create");
+const viewButton = document.querySelector("#view");
+const body = document.querySelector("body");
+
+function addFeedback(){
+ //Fill the required logic 
+ const resultDiv = document.querySelector("#result");
+ if(resultDiv) resultDiv.remove();
+const feedbackText = textarea.value;
+ feedbackArray.push(feedbackText);
+ textarea.value="";
+ const html ='<div id="result" style="border: 5px solid black; width:40%"><h2>Feedback Details</h2><h3>Successfully added feedback details</h3></div>';
+ body.insertAdjacentHTML('beforeend',html);  
+ }
+
+function displayFeedback(){
+    //Fill the required logic
+    const resultDiv = document.querySelector("#result");
+    
+    //guard clause
+    if(!resultDiv) return;
+    
+    feedbackArray.forEach(function(feedback,i){
+        const html ='div id="result" style="border: 5px solid black; width:40%"><h2>Feedback Details</h2><h3>Successfully added feedback details</h3></div>';
+        resultDiv.insertAdjacentHTML("beforeend",html);
+    });
+}
+
+addButton.addEventListener("click",addFeedback);
+viewButton.addEventListener("click",displayFeedback);*/
+/*
+const feedbacks=[]
+//student 2
+function addFeedback(){
+ var successText = "Successfully Added Feedback Details!";
+ var textAreaValue = document.getElementById('feedback').value;
+ document.getElementById('feedback').value="";
+ feedbacks.push("Feedback "+(feedbacks.length+1)+"<br>"+textAreaValue+"<br>");
+  var res = "<h2>Feeback Details<h2>";
+  var r = res.concat(successText);
+  console.log(r);
+  console.log(feedbacks);
+  document.getElementById('result').innerHTML =r;
+  
+}
+ 
+function displayFeedback(){
+    //Fill the required logic
+    var resultHTML= "";
+    for (var i = 0; i < feedbacks.length; i++) {
+        resultHTML+=feedbacks[i];
+    }
+    document.getElementById("result").innerHTML="<h2>Feedback Details</h2>"+resultHTML;
+    feedbacks=[];
+}*/
+
+
+//Student 3:
+var arr = [];
+
+function addFeedback(){
+    var q = document.getElementById('result');
+    q.style.display = "none";
+ var p = document.getElementById("feedback").value;
+ arr.push(p);
+    var x = document.getElementById("hj");
+    x.style.display = "block";
+    document.getElementById("feedback").value = "";
+}
+
+function displayFeedback(){
+    var x = document.getElementById("hj");
+    x.style.display = "none";
+    
+   var q = document.getElementById('result');
+   q.style.display = "block";
+   q.style.border = "3px solid black";
+   var str = '<h2>Feedback Details</h2>';
+   for(var i=0;i<arr.length;i++)
+       {
+         str+= 'FeedBack '+ (i+1) + '<br>';
+         str+= arr[i]+'<br>';
+       }
+       q.innerHTML = str;
+    arr=[];
+}
