@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+    h1,p{
+        color:blue;
+    }
+    #s1,#s2{
+        color:red;
+    }
+</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script> 
+     $(function(){
+         $("#s2").html(0).css("#s2");
+     })
+     function order1(){
+         var t = $("#t").val();
+         $("#s1,#s2").html(t);
+     }
+ </script>
+</head>
+<body>
+  <div> 
+      <h1 id="h"><span id="s1"></span> Jelly Bean Packets !!!</h1>
+    Enter the no of packets required <input type="text" id="t"/> <button onclick="order1()">Order</button>
+    <p>You have ordered <span id="s2"></span> Gelly Bean packets.</p>
+</div>
+</body>
+</html>
