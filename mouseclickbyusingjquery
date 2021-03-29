@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+     .highlight{
+         width:600px;
+         height:150px;
+         background-color:lightblue;
+         position:relative;
+     }
+     .textmessage{
+         width:500px;
+         height:80px;
+         top:10px;
+         left:10px;
+         background-color:white;
+         position:absolute;
+     }
+     p{
+         font-size:20px;
+         left:10px;
+         position:absolute;
+     }
+</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script> 
+     $(function() {
+         $(".textmessage").hide();
+         $(".highlight").click(function() {
+             $(".textmessage").show();
+             $(".textmessage p").html("You Nailed it!! Best of Luck!!");
+         })
+     })
+ </script>
+</head>
+<body>
+  <div class="highlight"> 
+       <div class="textmessage">
+                <p></p>
+       </div>
+</div>
+</body>
+</html>
