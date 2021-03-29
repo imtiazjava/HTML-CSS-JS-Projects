@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+  p{
+      color:red;
+  }
+ 
+</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script> 
+     $(function() {
+          $("button").click(function() {
+              $("button").css({"border-color":"blue"});
+                var d = $("#ta").val();
+                if(d.length<=50) {
+                $("p").html('The length of the entered text is:'+d.length);
+                }else{
+                    $("p").html("Sorry!! Text length exceeds the limit");
+                }
+          });
+     })
+ </script>
+</head>
+<body>
+    <div> 
+        <h1>Enter Text and Click the Button</h1>
+        <textarea rows="10" cols="60" id="ta"></textarea><br/>
+        <button>Find Length of You Description</button>
+        <p></p>
+    </div>
+</body>
+</html>
